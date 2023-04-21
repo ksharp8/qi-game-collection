@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>战国自走棋-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 战国 自走棋">
+<meta name="description" content="meta 一款战国题材的自走棋游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+<style>
+    @keyframes myfirst{0%   {}25%  {}50%  {transform: translate(0px,-550px);}100% {}}
+    h1{animation: myfirst 5s;animation-play-state: paused;}
+</style>
+</head>
+<body style="text-align: center">
+    <div>
+        <p style="font-size:28px">敌方武将</p>
+        <img src="0.png" id="img1" style="width:30%;">
+        <span id="result" style="color: red;font-size:48px;position:relative;display: none;">HP-1</span>
+    </div>
+    <div>
+        <p style="font-size:28px">我方武将</p>
+        <h1><img src="0.png" id="img2" style="width:30%;"></h1>
+    </div>
+    <button type="button" onclick="than()" style="width: 20%;height:5em;font-size:38px">抽武将</button>
+    <script>
+        var array = ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png'];
+        var txt = document.getElementById('result');
+        
+        function than(){
+            var rand1 = Math.floor(Math.random()*11);
+            var img_src1 = img1.setAttribute('src', array[rand1]);
+            var rand2 = Math.floor(Math.random()*11);
+            var img_src2 = img2.setAttribute('src', array[rand2]);
+    
+            console.log(rand1); 
+            console.log(rand2); 
+            
+            var style = document.createElement('style');
+            style.innerHTML = 'h1{animation-play-state:running}';
+            document.head.appendChild(style);
+
+            setTimeout(colors,6000);
+            // txt.innerText="HP-1";
+        }
+        function colors(){
+            txt.style.display="block";
+        }
+       
+    </script>
+</body>
+</html>

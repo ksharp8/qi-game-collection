@@ -1,0 +1,1089 @@
+<html>
+<head>
+<title>国际象棋抽走法-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta ">
+<meta name="description" content="meta ">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+<style>
+    ul{list-style:none;margin:0 auto;clear:both}
+    li{float:left;width:20%}
+    canvas{display:block;margin: 0 auto;} 
+</style>
+</head>
+<body>
+    
+	<div>
+        <ul>
+            <li id="l11"><canvas id="d11" onclick="colors()"></canvas></li>
+            <li><canvas id="d12"></canvas></li>
+            <li><canvas id="d13"></canvas></li>
+            <li><canvas id="d14"></canvas></li>
+            <li><canvas id="d15"></canvas></li>
+        </ul>
+        <ul>
+            <li><canvas id="d21"></canvas></li>
+            <li><canvas id="d22"></canvas></li>
+            <li><canvas id="d23"></canvas></li>
+            <li><canvas id="d24"></canvas></li>
+            <li><canvas id="d25"></canvas></li>
+        </ul>
+        <ul>
+            <li><canvas id="d31"></canvas></li>
+            <li><canvas id="d32"></canvas></li>
+            <li><canvas id="d33"></canvas></li>
+            <li><canvas id="d34"></canvas></li>
+            <li><canvas id="d35"></canvas></li>
+        </ul>
+        <ul>
+            <li><canvas id="d41"></canvas></li>
+            <li><canvas id="d42"></canvas></li>
+            <li><canvas id="d43"></canvas></li>
+            <li><canvas id="d44"></canvas></li>
+            <li><canvas id="d45"></canvas></li>
+        </ul>
+        <ul>
+            <li><canvas id="d51"></canvas></li>
+            <li><canvas id="d52"></canvas></li>
+            <li><canvas id="d53"></canvas></li>
+            <li><canvas id="d54"></canvas></li>
+            <li><canvas id="d55"></canvas></li>
+        </ul>
+    </div>
+    <div id="chess" style="height:30em;text-align: center;margin:auto;">
+        <img src="0.png" id="img1" style="height:20em"/>
+    </div>
+    <form style="text-align: center">
+        <button onclick="start()" type="button" id="starts" style="width:70%;height:3em;font-size: 48px;">抽棋查走法</button>
+    </form>
+    <P style="position:absolute;bottom:0;">
+        规则：点击按钮，自动抽取国际象棋的棋子，根据行进规则标红落子点。
+    </P>
+    <script>
+        var c=document.getElementById("d11");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d12");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d13");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d14");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d15");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d21");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d22");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d23");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d24");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d25");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d31");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d32");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d33");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d34");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d35");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d41");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d42");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d43");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d44");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d45");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d51");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d52");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d53");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d54");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d55");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,20,120,120);
+        ctx.stroke();
+
+        var c=document.getElementById("d33");
+        var ctx=c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(60,80,50,0,2*Math.PI);
+        ctx.fillStyle="blue";
+        ctx.fill();
+        ctx.stroke();
+
+        //ctx.clearRect(0,20,120,120);
+
+        var array = ['1.png','2.png','3.png','4.png','5.png','6.png'];
+        var txt = document.getElementById('chess');
+
+        function start(){
+            var rand1 = Math.floor(Math.random()*5);
+            var img_src1 = img1.setAttribute('src', array[rand1]);
+
+
+            //判断是国际象棋中的哪个棋子
+            if (rand1 == 0)
+            {
+                
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                
+            
+            }else if (rand1 == 1){
+                
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                
+            
+        
+            }else if (rand1 == 2){
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+                
+            }else if (rand1 == 3)
+            {
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+            }else if (rand1 == 4)
+            {
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+            }else
+            {
+                var c=document.getElementById("d11");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d12");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d13");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d14");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d15");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d21");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d22");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d23");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d24");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d25");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d31");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d32");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d34");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d35");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d41");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d42");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d43");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d44");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d45");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d51");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d52");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d53");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="red";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d54");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+
+                var c=document.getElementById("d55");
+                var ctx=c.getContext("2d");
+                ctx.fillStyle="yellow";
+                ctx.fill();
+                ctx.stroke();
+            };       
+        }
+    </script>
+</body>
+</html>

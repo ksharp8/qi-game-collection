@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>看花牌猜月份-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta ">
+<meta name="description" content="meta ">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body>
+    <div style="text-align:center">
+        <img src="0.png" id="huapai" style='width:30%;border:1px solid green'/>
+    </div>
+    <div id="paimin" style="text-align:center;font-size:98px">
+    </div>
+    <div style="text-align: center;margin-top:200px">
+        <button id='cai' onclick="cais()" type="button" width="30%" height="5%" style="font-size:120px">猜月份</button>
+    </div>
+    <div id="yuefen" style="text-align:center;font-size:98px;color: red;margin-top: 10%;">
+    </div>
+    <div style="text-align: center;position: absolute;bottom: 5%;left: 35%;">
+        <button id='cai' onclick="javascript:location.reload();" type="button" width="30%" height="5%" style="font-size:120px">重置</button>
+    </div>
+    <script>
+        var arr=['muyue','ruyue','mishen','maoyue','gaoyue','shuiwuyue','wenyue','yeyue','changyue','shenwuyue','shuangyue','shizou'];
+        var rand = Math.floor(Math.random()*11);
+        //console.log(arr[rand]);
+        var names = document.getElementById('paimin');
+        var huapai = arr[rand] + '.png';
+        
+        if (rand == 0){
+            var no = document.createTextNode("睦月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 1){
+            var no = document.createTextNode("如月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 2){
+            var no = document.createTextNode("弥生");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 3){
+            var no = document.createTextNode("卯月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 4){
+            var no = document.createTextNode("皋月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 5){
+            var no = document.createTextNode("水无月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 6){
+            var no = document.createTextNode("文月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 7){
+            var no = document.createTextNode("叶月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 8){
+            var no = document.createTextNode("长月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 9){
+            var no = document.createTextNode("神无月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 10){
+            var no = document.createTextNode("霜月");
+            names.replaceChild(no,names.childNodes[0]);
+        }else if(rand == 11){
+            var no = document.createTextNode("师走");
+            names.replaceChild(no,names.childNodes[0]);
+        }else{
+            var no = document.createTextNode("");
+            names.replaceChild(no,names.childNodes[0]);
+        }
+        var src = document.getElementById('huapai').src=huapai;
+
+        //显示月份
+        var namess = document.getElementById('yuefen');
+        
+        function cais(){
+            if (rand == 0){
+                var nos = document.createTextNode("一月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 1){
+                var nos = document.createTextNode("二月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 2){
+                var nos = document.createTextNode("三月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 3){
+                var nos = document.createTextNode("四月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 4){
+                var nos = document.createTextNode("五月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 5){
+                var nos = document.createTextNode("六月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 6){
+                var nos = document.createTextNode("七月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 7){
+                var nos = document.createTextNode("八月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 8){
+                var nos = document.createTextNode("九月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 9){
+                var nos = document.createTextNode("十月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 10){
+                var nos = document.createTextNode("十一月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else if(rand == 11){
+                var nos = document.createTextNode("十二月");
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }else{
+                var nos = document.createTextNode('');
+                namess.replaceChild(nos,namess.childNodes[0]);
+            }
+        }
+    </script>
+</body>
+</html>

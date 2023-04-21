@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>三国转转乐-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 三国 转转 抽奖">
+<meta name="description" content="meta 一款三国题材的转转乐游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body>
+    <img src="caocao.png" width="30%" id="caocao" style="border: 1px solid white">
+    <img src="guanyu.png" width="30%" id="guanyu" style="border: 1px solid white">
+    <img src="liubei.png" width="30%" id="liubei" style="border: 1px solid white">
+    <img src="sima.png" width="30%" id="sima" style="border: 1px solid white">
+    <img src="sunshi.png" width="30%" id="sunshi" style="visibility: hidden;border: 1px solid white">
+    <img src="xiahou.png" width="30%" id="xiahou" style="border: 1px solid white">
+    <img src="xiaoqiao.png" width="30%" id="xiaoqiao" style="border: 1px solid white">
+    <img src="zhangfei.png" width="30%" id="zhangfei" style="border: 1px solid white">
+    <img src="zhouyu.png" width="30%" id="zhouyu" style="border: 1px solid white"><br>
+    <div style="text-align: center;margin-top: 10%;">
+        <button type="button" onclick="zhuan()" style="width:40%;height:10%;font-size:300%;border-radius:45px">转一下</button>
+    </div>
+    <script>
+        var seed; 
+        
+        function zhuan0(){
+            document.getElementById('caocao').style.border='1px solid red';
+        }
+        function zhuan1(){
+            document.getElementById('caocao').style.border='1px solid white';
+            document.getElementById('guanyu').style.border='1px solid red';
+        }
+        function zhuan2(){
+            document.getElementById('guanyu').style.border='1px solid white';
+            document.getElementById('liubei').style.border='1px solid red';
+        }
+        function zhuan3(){
+            document.getElementById('liubei').style.border='1px solid white';
+            document.getElementById('xiahou').style.border='1px solid red';
+        }
+        function zhuan4(){
+            document.getElementById('xiahou').style.border='1px solid white';
+            document.getElementById('zhouyu').style.border='1px solid red';
+        }
+        function zhuan5(){
+            document.getElementById('zhouyu').style.border='1px solid white';
+            document.getElementById('zhangfei').style.border='1px solid red';
+        }
+        function zhuan6(){
+            document.getElementById('zhangfei').style.border='1px solid white';
+            document.getElementById('xiaoqiao').style.border='1px solid red';
+        }
+        function zhuan7(){
+            document.getElementById('xiaoqiao').style.border='1px solid white';
+            document.getElementById('sima').style.border='1px solid red';
+        }
+        function zhuan8(){
+            document.getElementById('sima').style.border='1px solid white';
+            document.getElementById('caocao').style.border='1px solid red';
+        }
+        function zhuan9(){
+            document.getElementById('caocao').style.border='1px solid white';
+        }
+      
+        function zhuan(){
+            var seed = parseInt(Math.random()*10);
+            console.log(seed);
+            document.getElementById('caocao').style.border='1px solid white';
+            document.getElementById('guanyu').style.border='1px solid white';
+            document.getElementById('liubei').style.border='1px solid white';
+            document.getElementById('xiahou').style.border='1px solid white';
+            document.getElementById('zhouyu').style.border='1px solid white';
+            document.getElementById('zhangfei').style.border='1px solid white';
+            document.getElementById('xiaoqiao').style.border='1px solid white';
+            document.getElementById('sima').style.border='1px solid white';
+            document.getElementById('sunshi').style.border='1px solid white';
+            setTimeout("zhuan0()",0);
+            setTimeout("zhuan1()",1000);
+            setTimeout("zhuan2()",2000);
+            setTimeout("zhuan3()",3000);
+            setTimeout("zhuan4()",4000);
+            setTimeout("zhuan5()",5000);
+            setTimeout("zhuan6()",6000);
+            setTimeout("zhuan7()",7000);
+            setTimeout("zhuan8()",8000);
+            setTimeout("zhuan9()",9000);
+            setTimeout("pick()",11000);
+        }
+        
+        function pick(){
+            if (seed == 1){  
+                document.getElementById('caocao').style.border='1px solid red';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 2){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid red';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 3){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid red';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 4){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid red';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 5){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid red';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 6){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid red';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 7){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid red';
+                document.getElementById('sima').style.border='1px solid white';
+            }else if(seed == 8){
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid red';
+            }else{
+                document.getElementById('caocao').style.border='1px solid white';
+                document.getElementById('guanyu').style.border='1px solid white';
+                document.getElementById('liubei').style.border='1px solid white';
+                document.getElementById('xiahou').style.border='1px solid white';
+                document.getElementById('zhouyu').style.border='1px solid white';
+                document.getElementById('zhangfei').style.border='1px solid white';
+                document.getElementById('xiaoqiao').style.border='1px solid white';
+                document.getElementById('sima').style.border='1px solid white';
+                document.getElementById('sunshi').style.border='1px solid red';
+                document.getElementById('sunshi').style.visibility='visible';
+            }
+        }   
+    </script>
+</body>
+</html>

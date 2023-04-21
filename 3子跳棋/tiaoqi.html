@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>三角跳棋猜猜乐-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 跳棋 三角棋 猜棋">
+<meta name="description" content="meta 一款猜颜色和方向的三角跳棋游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+<style>
+    td {width:30%;padding: 70px;}
+</style>
+</head>
+<body>
+    <div style="text-align: center;font-size: 68px;color:pink">
+        猜方向或颜色
+    </div>
+    <div id='imgs' style="height:30%;text-align: center;"><img src="white.png" id='srcs' style="width:50%"/></div>
+    <div>
+        <table style="font-size:158px">
+            <tr>
+                <td></td>
+                <td style="color:gray" onclick="enter()">上</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="color:gray" onclick="enter()">左</td>
+                <td></td>
+                <td style="color:gray" onclick="enter()">右</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="color:gray" onclick="enter()">下</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="color:red" onclick="enter()">红</td>
+                <td style="color:green" onclick="enter()">绿</td>
+                <td style="color:blue" onclick="enter()">蓝</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var arr = ['blue1','green1','red1','blue2','green2','red2','blue3','green3','red3','blue4','green4','red4'];
+        //console.log(rand);
+        function enter(){
+            var rand = Math.floor(Math.random()*12);
+            var img = arr[rand]+'.png';
+            //console.log(img);
+            var src = document.getElementById('srcs').src=img;
+            //var node = document.createTextNode(img);
+        }
+    </script>
+</body>
+</html>

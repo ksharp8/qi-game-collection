@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>将棋六合彩-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 将棋 六合彩 彩票">
+<meta name="description" content="meta 一款以将棋为主题的六合彩游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body>
+    <div>
+        <span><img src="0.png" id="k1" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="k2" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="k3" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="k4" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="k5" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="k6" style="border:1px solid red;width:13%"></span>
+    </div>
+    <div style="margin-top:10%;font-size: 48px;">
+        第一步：选择六个将棋棋子（可以重复）
+    </div>
+    <div style="margin-top:10%">
+        <span><img src="fei.png" id="qi1" onclick="pai1()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="gui.png" id="qi2" onclick="pai2()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="jiao.png" id="qi3" onclick="pai3()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="long.png" id="qi4" onclick="pai4()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="ma.png" id="qi5" onclick="pai5()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="wang.png" id="qi6" onclick="pai6()" style="border:1px solid red;width:13%;margin-right: 2%;"></span>
+        <span><img src="xiang.png" id="qi7" onclick="pai7()" style="border:1px solid red;width:13%;margin-right: 2%;margin-top: 5%"></span>
+        <span><img src="yin.png" id="qi8" onclick="pai8()" style="border:1px solid red;width:13%;margin-top: 5%"></span>
+    </div>
+    <div style="margin-top:10%;font-size: 48px;">
+        第二步：摇号
+    </div>
+    <div style="text-align: center;display: none;" id="yao"><button type="button" onclick="yaos()" style="font-size: 48px;width:20%;height:8%">摇号</button></div>
+    <div>
+        <span><img src="0.png" id="r1" style="width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="r2" style="width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="r3" style="width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="r4" style="width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="r5" style="width:13%;margin-right: 2%;"></span>
+        <span><img src="0.png" id="r6" style="width:13%"></span>
+    </div>
+    <script>
+        //取空格值  
+        var k1 = document.getElementById('k1');
+        var k2 = document.getElementById('k2');
+        var k3 = document.getElementById('k3');
+        var k4 = document.getElementById('k4');
+        var k5 = document.getElementById('k5');
+        var k6 = document.getElementById('k6');
+
+        //取摇号节点
+        var yaohao = document.getElementById('yao');
+
+        //默认存储
+        localStorage.setItem("count", "0");
+        function pai1(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="fei.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="fei.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="fei.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="fei.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="fei.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="fei.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai2(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="gui.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="gui.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="gui.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="gui.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="gui.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="gui.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai3(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="jiao.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="jiao.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="jiao.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="jiao.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="jiao.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="jiao.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai4(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="long.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="long.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="long.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="long.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="long.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="long.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai5(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="ma.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="ma.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="ma.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="ma.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="ma.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="ma.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai6(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="wang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="wang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="wang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="wang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="wang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="wang.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai7(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="xiang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="xiang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="xiang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="xiang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="xiang.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="xiang.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+        function pai8(){
+            var count = localStorage.getItem("count");
+            if (count == 0){
+                count++;
+                k1.src="yin.png";
+                localStorage.setItem("count", count);
+            }else if(count == 1){
+                count++;
+                k2.src="yin.png";
+                localStorage.setItem("count", count);
+            }else if(count == 2){
+                count++;
+                k3.src="yin.png";
+                localStorage.setItem("count", count);
+            }else if(count == 3){
+                count++;
+                k4.src="yin.png";
+                localStorage.setItem("count", count);
+            }else if(count == 4){
+                count++;
+                k5.src="yin.png";
+                localStorage.setItem("count", count);
+            }else if(count == 5){
+                k6.src="yin.png";
+                localStorage.setItem("count", count);
+                yaohao.style.display="block";
+            }
+        }
+
+        function yaos(){
+            var arr = ['fei','gui','jiao','long','ma','wang','xiang','yin'];
+            var seed1 = arr[Math.round(Math.random()*7)];
+            var seed2 = arr[Math.round(Math.random()*7)];
+            var seed3 = arr[Math.round(Math.random()*7)];
+            var seed4 = arr[Math.round(Math.random()*7)];
+            var seed5 = arr[Math.round(Math.random()*7)];
+            var seed6 = arr[Math.round(Math.random()*7)];
+            
+            //console.log(seed);
+            r1.src = seed1+'.png';
+            r2.src = seed2+'.png';
+            r3.src = seed3+'.png';
+            r4.src = seed4+'.png';
+            r5.src = seed5+'.png';
+            r6.src = seed6+'.png';
+        }
+    </script>
+</body>
+</html>
