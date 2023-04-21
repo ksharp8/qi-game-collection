@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>麻将历险记-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta ">
+<meta name="description" content="meta ">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body style="font-size: 58px">
+    <div><img src="bai.png" style="width:5em"></div>
+    <div id="zibai"></div>
+    <div id="zibai1"></div>
+    <div id="zibai2"></div>
+    <div id="zibai3"></div>
+    <div>我要给你个大大的惊喜</div>
+    <button onclick="j10()" style="color: red;margin:0 auto;display:block;margin-top:20%;height:5%;font-size:38px">点击有惊喜！</button>
+    <div id="xi" style="text-align:center;color:red;font-size:188px"></div>
+    <div id="fa" style="text-align:center;color:green;font-size:88px"></div>
+    <script>
+        var jijie = localStorage.jijie;
+        var fangwei = localStorage.fangwei;
+        var huase = localStorage.huase;
+        //console.log(jijie);
+        var para = document.getElementById('zibai');
+        var para1 = document.getElementById('zibai1');
+        var para2 = document.getElementById('zibai2');
+        var para3 = document.getElementById('zibai3');
+        var txt = jijie+fangwei+huase;
+        var node = document.createTextNode("我是白板，又叫"+txt);
+        para.appendChild(node);
+        var node1 = document.createTextNode("我是一个"+jijie+"天出生的宝宝");
+        para1.appendChild(node1);
+        var node2 = document.createTextNode("足迹遍布中国的整个"+fangwei+"部");
+        para2.appendChild(node2);
+        var node3 = document.createTextNode("最喜欢的花是"+huase);
+        para3.appendChild(node3);
+
+        //倒计时
+        var para4 = document.getElementById('xi');
+        function j10(){
+            var no10 = document.createTextNode("10");
+            para4.appendChild(no10);
+            setTimeout(j9, 1000);
+        }
+        function j9(){
+            var no9 = document.createTextNode("9");
+            para4.replaceChild(no9,para4.childNodes[0]);
+            setTimeout(j8, 1000);
+        }
+        function j8(){
+            var no8 = document.createTextNode("8");
+            para4.replaceChild(no8,para4.childNodes[0]);
+            setTimeout(j7, 1000);
+        }
+        function j7(){
+            var no7 = document.createTextNode("7");
+            para4.replaceChild(no7,para4.childNodes[0]);
+            setTimeout(j6, 1000);
+        }
+        function j6(){
+            var no6 = document.createTextNode("6");
+            para4.replaceChild(no6,para4.childNodes[0]);
+            setTimeout(j5, 1000);
+        }
+        function j5(){
+            var no5 = document.createTextNode("5");
+            para4.replaceChild(no5,para4.childNodes[0]);
+            setTimeout(j4, 1000);
+        }
+        function j4(){
+            var no4 = document.createTextNode("4");
+            para4.replaceChild(no4,para4.childNodes[0]);
+            setTimeout(j3, 1000);
+        }
+        function j3(){
+            var no3 = document.createTextNode("3");
+            para4.replaceChild(no3,para4.childNodes[0]);
+            setTimeout(j2, 1000);
+        }
+        function j2(){
+            var no2 = document.createTextNode("2");
+            para4.replaceChild(no2,para4.childNodes[0]);
+            setTimeout(j1, 1000);
+        }
+        function j1(){
+            var no1 = document.createTextNode("1");
+            para4.replaceChild(no1,para4.childNodes[0]);
+            setTimeout(j0, 1000);
+        }
+        function j0(){
+            var no0 = document.createTextNode("0");
+            para4.replaceChild(no0,para4.childNodes[0]);
+            setTimeout(fa, 1000);
+        } 
+        function fa(){
+            var no = document.createTextNode("發");
+            para4.replaceChild(no,para4.childNodes[0]);
+            setTimeout(fa2, 1000);
+        }
+        function fa2(){
+            //var fa = document.createTextNode("發");
+            fa2 = document.getElementById('fa');
+            var fas = document.createTextNode("大吉大利 恭喜發財");
+            fa2.appendChild(fas);
+            //setTimeout(fa2, 1000);
+        }
+    </script>
+</body>
+</html>

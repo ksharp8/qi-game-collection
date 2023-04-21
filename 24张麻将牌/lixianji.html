@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>麻将历险记-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 麻将 游戏">
+<meta name="description" content="meta 一款以麻将为主题的创业历险游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body style="text-align:center;font-size:5em">
+    <form>
+        <p>选择季节？</p>
+        <div>
+            <img src="chun.png" onclick="chun()" style="width:2em" id="chuns"/>
+            <img src="xia.png" onclick="xia()"  style="width:2em" id="xias"/>
+            <img src="qiu.png" onclick="qiu()"  style="width:2em" id="qius"/>
+            <img src="dong1.png" onclick="dong1()"  style="width:2em" id="dong1s"/>
+        </div>
+        <p>选择方位？</p>
+        <div>
+            <img src="dong.png" onclick="dong()" style="width:2em" id="dongs"/>
+            <img src="nan.png" onclick="nan()"  style="width:2em" id="nans"/>
+            <img src="xi.png" onclick="xi()"  style="width:2em" id="xis"/>
+            <img src="bei.png" onclick="bei()"  style="width:2em" id="beis"/> 
+        </div>
+        <p>选择花色？</p>
+        <div>
+            <img src="mei.png" onclick="mei()" style="width:2em" id="meis"/>
+            <img src="lan.png" onclick="lan()"  style="width:2em" id="lans"/>
+            <img src="zhu.png" onclick="zhu()"  style="width:2em" id="zhus"/>
+            <img src="ju.png" onclick="ju()"  style="width:2em" id="jus"/> 
+        </div>
+        <button style="width:30%;height:4%;font-size:38px"><a href="lixianji2.html" style="text-decoration:none;color:black">生成角色</a></button>
+    </form>
+    <script>
+        //季节
+        function chun(){
+            localStorage.setItem("jijie", "春");
+            document.getElementById('chuns').style.border="1px solid red";
+            document.getElementById('xias').style.border="0px solid red";
+            document.getElementById('qius').style.border="0px solid red";
+            document.getElementById('dong1s').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function xia(){
+            localStorage.setItem("jijie", "夏");
+            document.getElementById('chuns').style.border="0px solid red";
+            document.getElementById('xias').style.border="1px solid red";
+            document.getElementById('qius').style.border="0px solid red";
+            document.getElementById('dong1s').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function qiu(){
+            localStorage.setItem("jijie", "秋");
+            document.getElementById('chuns').style.border="0px solid red";
+            document.getElementById('xias').style.border="0px solid red";
+            document.getElementById('qius').style.border="1px solid red";
+            document.getElementById('dong1s').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function dong1(){
+            localStorage.setItem("jijie", "冬");
+            document.getElementById('chuns').style.border="0px solid red";
+            document.getElementById('xias').style.border="0px solid red";
+            document.getElementById('qius').style.border="0px solid red";
+            document.getElementById('dong1s').style.border="1px solid red";
+            //console.log(localStorage.jijie);
+        }
+
+        //方位
+        function dong(){
+            localStorage.setItem("fangwei", "东");
+            document.getElementById('dongs').style.border="1px solid red";
+            document.getElementById('nans').style.border="0px solid red";
+            document.getElementById('xis').style.border="0px solid red";
+            document.getElementById('beis').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function nan(){
+            localStorage.setItem("fangwei", "南");
+            document.getElementById('dongs').style.border="0px solid red";
+            document.getElementById('nans').style.border="1px solid red";
+            document.getElementById('xis').style.border="0px solid red";
+            document.getElementById('beis').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function xi(){
+            localStorage.setItem("fangwei", "西");
+            document.getElementById('dongs').style.border="0px solid red";
+            document.getElementById('nans').style.border="0px solid red";
+            document.getElementById('xis').style.border="1px solid red";
+            document.getElementById('beis').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function bei(){
+            localStorage.setItem("fangwei", "北");
+            document.getElementById('dongs').style.border="0px solid red";
+            document.getElementById('nans').style.border="0px solid red";
+            document.getElementById('xis').style.border="0px solid red";
+            document.getElementById('beis').style.border="1px solid red";
+            //console.log(localStorage.fangwei);
+        }
+
+        //花色
+        function mei(){
+            localStorage.setItem("huase", "梅");
+            document.getElementById('meis').style.border="1px solid red";
+            document.getElementById('lans').style.border="0px solid red";
+            document.getElementById('zhus').style.border="0px solid red";
+            document.getElementById('jus').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function lan(){
+            localStorage.setItem("huase", "兰");
+            document.getElementById('meis').style.border="0px solid red";
+            document.getElementById('lans').style.border="1px solid red";
+            document.getElementById('zhus').style.border="0px solid red";
+            document.getElementById('jus').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function zhu(){
+            localStorage.setItem("huase", "竹");
+            document.getElementById('meis').style.border="0px solid red";
+            document.getElementById('lans').style.border="0px solid red";
+            document.getElementById('zhus').style.border="1px solid red";
+            document.getElementById('jus').style.border="0px solid red";
+            //console.log(localStorage.jijie);
+        }
+        function ju(){
+            localStorage.setItem("huase", "菊");
+            document.getElementById('meis').style.border="0px solid red";
+            document.getElementById('lans').style.border="0px solid red";
+            document.getElementById('zhus').style.border="0px solid red";
+            document.getElementById('jus').style.border="1px solid red";
+            //console.log(localStorage.huase);
+        }
+        
+    </script>
+</body>
+</html>

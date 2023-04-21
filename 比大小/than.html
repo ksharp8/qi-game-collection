@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>扑克比大小-宅萌-魔都市</title>
+<meta charset="UTF-8" />
+<meta name="keywords" content="meta 扑克 扑克牌 比大小">
+<meta name="description" content="meta 可以比大小的扑克牌游戏">
+<meta name="author" content="meta 玄月冰灵(张抿轩)ksharp8@qq.com">
+</head>
+<body style="text-align: center">
+    <div id="poker" style="height:60em;">
+        <img src="0.png" id="img1" style="height:20em"/><br>
+        <img src="0.png" id="img2" style="height:20em"/>
+    </div>
+	<form>
+        <button onclick="than()" type="button" id="pick" style="width:70%;height:3em;font-size: 48px;">抽牌</button><br><br>
+        <button onclick="up()" type="button" id="big" style="width:70%;height:3em;font-size: 48px;">上比下大</button><br><br>
+        <button onclick="down()" type="button" id="small" style="width:70%;height:3em;font-size: 48px;">下比上大</button><br><br>
+        <button onclick="same()" type="button" id="equal" style="width:70%;height:3em;font-size: 48px;">上下一样大</button>
+    </form>
+    <div id="result" style="color: red;font-size: 100px;">
+
+    </div>
+    <p style="position:absolute;bottom:0">
+        规则：2>A>K>Q>J>10>9>8>7>6>5>4>3>2
+    </p>
+</body>
+    <script>
+        var array = ['3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png','14.png','15.png'];
+        var txt = document.getElementById('result');
+        
+        function than(){
+            var rand1 = Math.floor(Math.random()*12);
+            var img_src1 = img1.setAttribute('src', array[rand1]);
+            var rand2 = Math.floor(Math.random()*12);
+            var img_src2 = img2.setAttribute('src', array[rand2]);
+            
+            sessionStorage.setItem('rands1', rand1);
+            sessionStorage.setItem('rands2', rand2);
+            //var randss1 = sessionStorage.getItem("rands1");
+            /* return [rand1,rand2]; */
+        }
+
+        /* var return1 = than();
+        var rands1 = return1[0];
+        var rands2 = return1[1]; */
+        //document.write(rand1);
+        
+        
+        function up(){
+            var get_rand1 = sessionStorage.getItem("rands1");
+            var get_rand2 = sessionStorage.getItem("rands2");
+            console.log(get_rand1); 
+            console.log(get_rand2); 
+            if (get_rand1 > get_rand2)
+            {
+                txt.innerText="WIN";
+            }else
+            {
+                txt.innerText="LOSE";
+            } 
+        }
+
+        function down(){
+            var get_rand1 = sessionStorage.getItem("rands1");
+            var get_rand2 = sessionStorage.getItem("rands2");
+            console.log(get_rand1); 
+            console.log(get_rand2); 
+            if (get_rand1 < get_rand2)
+            {
+                txt.innerText="WIN";
+            }else
+            {
+                txt.innerText="LOSE";
+            } 
+        }
+
+        function same(){
+            var get_rand1 = sessionStorage.getItem("rands1");
+            var get_rand2 = sessionStorage.getItem("rands2");
+            console.log(get_rand1); 
+            console.log(get_rand2); 
+            if (get_rand1 == get_rand2)
+            {
+                txt.innerText="WIN";
+            }else
+            {
+                txt.innerText="LOSE";
+            } 
+        }
+    </script>
+</html>
